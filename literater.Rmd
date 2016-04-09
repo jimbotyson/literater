@@ -3,7 +3,7 @@ title: "Demonstrating Literate R"
 author: "Jim Tyson"
 date: "4 April 2016"
 bibliography: bibliography.bib
-output: pdf_document 
+output: word_document 
 toc: true
 ---
 
