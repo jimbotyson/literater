@@ -1,0 +1,38 @@
+
+R version 3.2.4 Revised (2016-03-16 r70336) -- "Very Secure Dishes"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # first read the raw data from an online source
+> resdf<-read.csv("http://ucl.ac.uk/~ccaajim/results.csv",header=TRUE)
+> 
+> # check values of continuous variables are in range dropping any out of range
+> resdf$maths[resdf$maths>100|resdf$maths<0]<-NA
+> resdf$english[resdf$english>100|resdf$english<0]<-NA
+> resdf$history[resdf$history>100|resdf$history<0]<-NA
+> 
+> resdf$avxm<-round((resdf$maths+resdf$english+resdf$history)/3)
+> 
+> resdf$stream <- factor(cut(resdf$avxm, breaks = c(0,50,60,100), labels=c("low", "mid", "high")))
+> 
+> write.table(resdf,"~/maketest/cleandata.csv",sep=",")
+> 
+> proc.time()
+   user  system elapsed 
+  0.263   0.017   2.323 
