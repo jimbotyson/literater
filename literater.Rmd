@@ -22,9 +22,10 @@ Reproducibility is the minimum standard for research.  Broman says
 And Peng in his presentation _Make the World a Better Place through Reproducible Research_ speaks of *Reproducible Research: A Minimum Standard* with the following characteristics
 
 * Published research where the following are made available:
-  * Analytic data
-  * Computer code implementing methods
-  * Documentation about code/data
+    + Analytic data
+    + Computer code implementing methods
+    + Documentation about code/data
+    
 All are distributed using standard means
 
 [see @rdpengrr]
