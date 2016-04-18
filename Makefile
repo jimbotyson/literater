@@ -4,12 +4,12 @@
 ######################
 
 ######################
-#Create markdown doc
-#Do statistics
-#Plot graph
+#Readn and clean data
+#Create markdown doc with R statistics chunks
+#Plot graphs
 #Render markdown
 
-literater.pdf: cleandata.csv avg.png
+literater.pdf: cleandata.csv avg.png 
 	Rscript -e 'rmarkdown::render("literater.Rmd")'
 
 ######################
@@ -23,3 +23,8 @@ cleandata.csv:
 avg.png:
 	R CMD BATCH graphs.R
 
+######################
+#The target clean can be used to remove junk/clean up
+
+clean:
+	rm -fv *.Rout

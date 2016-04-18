@@ -3,7 +3,7 @@ title: "Demonstrating Literate R"
 author: "Jim Tyson"
 date: "4 April 2016"
 bibliography: bibliography.bib
-output: pdf_document
+output: word_document
 toc: true
 ---
 
@@ -81,7 +81,7 @@ If you have __git__ installed, it is very easy to place your project under versi
 ```  
 10. push any changes committed to the local repository to the git hub repository
 ```
-  git push
+  git push origin master
 ```
 
 #### Make all products available to your audience

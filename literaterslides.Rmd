@@ -17,7 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 Reproducibility is the minimum standard for research.  Broman says
 
 _Computational work is reproducible if one can take the data and code and produce the same set of results. Replicable is more stringent: can someone  repeat the experiment and get the same results?_
- [see @bromantpr]
+ 
+[see @bromantpr]
 
 -------------------------------------
 
@@ -32,12 +33,41 @@ All are distributed using standard means
 
 [see @rdpengrr]
 
+## What could go wrong?
+
+You could just make a fool of yourself on a wiki page:
+
+[embarrassing chi square fail](https://en.wikibooks.org/wiki/Statistics_Ground_Zero/Association)
+
+Or you could get called out by a persistent graduate student:
+
+[strict austerity, less strict data checking](http://www.bbc.co.uk/news/magazine-22223190)
+
+
 
 ##Literate Programming 
 
 In this context, _literate programming_ [see @knuth_literate_1984] is seen as part of a workflow for _reproducible research_ by allowing a report on the results of research to be disseminated along with the computational code that produced the analysis.
 
-##Some Principles
+##The tools
+### Rstudio to write and run r scripts and markdown files
+As well as being a nice environment in which to run R and develop R scripts, RStudio will render rmarkdown documents for you.
+
+![The rmardown document creation process](RMarkdownFlow.png)
+
+##The tools
+### Gnu make to specify how products are to be assembled
+Gnu make will allow you to assemble the files that make up your project correctly and efficiently and provide others with a complete guide to how you created your research products.
+
+<img src="makefile.png" style="width: 350px;"/>
+
+##The tools
+### Git and git hub for version control
+Git will help you manage the development process and with git hub you can manage the project remotely - when you make changes locally you can merge them with the online repository.  This facilitates collaboration and mobile working.
+
+<img src="git-and-github-workflow.png" style="width: 350px;"/>
+
+##Some Principles (when using RStudio at least...)
 
 * Use packrat
 * Data is read only
@@ -71,96 +101,8 @@ Create a *make* file to specify how your product - usually a report - is to be p
 
 If you have __git__ installed, it is very easy to place your project under version control.  Here is the basic process for creating a repository using _git_ and _github_.
 
-
-<!-- ##### Set up your project with git and git hub -->
-<!-- 1. set up a git hub account. -->
-<!-- 2. Set global settings for git locally: -->
-<!--   git config --global user.name "Jim Tyson" -->
-<!--   git config --global user.email "j.tyson@ucl.ac.uk" -->
-<!-- 3. create a new repository on git hub -->
-<!-- 4. create a new directory for your project locally (ie on your hard drive) -->
-<!-- 5. go to the new directory and initialise it: -->
-<!--   git init -->
-<!-- 6. create a first file for the project eg a readme.txt file -->
-<!-- 7. tell git that the file you created is part of the repository: -->
-<!--   git add readme.txt -->
-<!-- 8. tell git that you want a snapshot taken of the current repository: -->
-<!--   git commit -m "Added the file readme.txt" -->
-<!--   git commit -a -->
-<!-- 9. link the local repository with the remote github repository -->
-<!--   git remote add origin https://github.com/jimbotyson/myproject.git -->
-<!--   git remote -v #to check what we just did -->
-<!-- 10. push any changes committed to the local repository to the git hub repository -->
-<!--   git push -->
-
 ## Make all products available to your audience
 
 Reproducibility is only achieved if you make the code and data accessible to your audience.  Github provides an excellent way to do this.  Create a public repository for the project.
-
-<!-- ## Make, Rstudio and Markdown -->
-
-<!-- This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. -->
-
-<!-- This document combines text R code that may create plots and tables, analyse data, and insert the results in to nicely formatted PDF documents.  This approach is often called _literate programming_. -->
-
-<!-- While in this example we are using _markdown_ as the document production language, but you can equally use LaTeX.  We are outputing a PDF file but you can equally produce HTML and Microsoft Word documents.  To use markdown with RStudio I use the package _knitr_.  To use LaTeX with RStudio, I would use the package _sweave_. -->
-
-<!-- ##The demonstration project -->
-
-<!-- ### The process in this demonstration. -->
-
-<!-- Rstudio is used to write the markdown file containing the R code and to produce the R scripts that are used in the data prepration and alaysis. -->
-
-<!-- Finally, the UNIX make utility is used to automate the process of running any scripts that are required to produce the report and to manage the dependencies between files, ensuring that only scripts that need to be run are run each time. -->
-
-<!-- ##The files in this demonstration# -->
-
-<!-- The main product of this demonstraion is the PDF.  That file is produced from the script *newtesting.Rmd*; that file contains graphs produced by *graphs.R*; *newtesting.PDF* and *graphs.R* depend on a clean data file called *cleandata.csv*; *cleandata.csv* is produced from the raw data which is read from a website and prepped by a script *readandclean.R*. -->
-
-<!-- ## A histogram -->
-
-<!-- ```{r readandplot,  echo=FALSE} -->
-<!-- resdf<-read.csv("cleandata.csv") -->
-
-<!-- hist(resdf$maths) -->
-
-
-<!-- ``` -->
-
-
-<!-- ##  Scatter Plots -->
-
-<!-- You can also embed plots, for example: -->
-
-<!-- ```{r pressure, echo=FALSE} -->
-<!-- plot(resdf$english,resdf$history) -->
-<!-- ``` -->
-
-<!-- Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot. -->
-
-<!-- ##Custome table -->
-
-<!-- | Left align | Right align | Center align | -->
-<!-- |:-----------|------------:|:------------:| -->
-<!-- | This       |        This |     This     | -->
-<!-- | column     |      column |    column    | -->
-<!-- | will       |        will |     will     | -->
-<!-- | be         |          be |      be      | -->
-<!-- | left       |       right |    center    | -->
-<!-- | aligned    |     aligned |   aligned    | -->
-
-
-<!-- ##Regression -->
-
-<!-- In this simple linear regression model, I introduce the r package _xtable_ which extends the functionality of r and allows for the creation of well formatted LaTeX coded tables.  This works because an rmarkdown file and recognise and interpret LaTeX code. -->
-
-<!-- ```{r regress, results='asis'} -->
-<!-- modenghist<-lm(resdf$english~resdf$history) -->
-<!-- library(xtable) -->
-<!-- coeffs<-xtable(summary(modenghist)$coef) -->
-<!-- print(coeffs) -->
-<!-- ``` -->
-
-<!-- \includegraphics[width=200pt]{avg.png} -->
 
 # References

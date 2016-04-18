@@ -3,6 +3,11 @@ PackratVersion: 0.4.7.1
 RVersion: 3.2.4
 Repos: CRAN=https://cran.rstudio.com/
 
+Package: Rcpp
+Source: CRAN
+Version: 0.12.4
+Hash: 115167d29098a4fd1e572fdbef809438
+
 Package: bitops
 Source: CRAN
 Version: 1.0-6
@@ -41,11 +46,27 @@ Version: 0.3
 Hash: 7ccc01f4d22d73d0d9b0d2a7781e7ff6
 Requires: digest
 
+Package: htmlwidgets
+Source: CRAN
+Version: 0.6
+Hash: 267a36d738dd98cec3dc9c471becb717
+Requires: htmltools, jsonlite, yaml
+
+Package: jsonlite
+Source: CRAN
+Version: 0.9.19
+Hash: 4a983f753b6e88ae0f5a6ac152d8cc32
+
 Package: knitr
 Source: CRAN
 Version: 1.11
 Hash: 0a6d1006425040af05e29504af948535
 Requires: digest, evaluate, formatR, highr, markdown, stringr, yaml
+
+Package: lazyeval
+Source: CRAN
+Version: 0.1.10
+Hash: 9679f1ac7f6bc07bc79755f34cd15e1f
 
 Package: magrittr
 Source: CRAN
@@ -68,11 +89,35 @@ Source: CRAN
 Version: 0.4.7-1
 Hash: 16ca16d36eb18d1d16113606ecc5c400
 
+Package: plyr
+Source: CRAN
+Version: 1.8.3
+Hash: 2df5437483a9a53a2deb2afb73258847
+Requires: Rcpp
+
+Package: reshape
+Source: CRAN
+Version: 0.8.5
+Hash: 08a3fc774cceaaec54edea9e9687a6c5
+Requires: plyr
+
+Package: revealjs
+Source: CRAN
+Version: 0.6
+Hash: 753d2266c1564b1064eac380582501ae
+Requires: rmarkdown
+
 Package: rmarkdown
 Source: CRAN
 Version: 0.9.5
 Hash: c47e8fb40e81162783fe1335a13a0ca3
 Requires: caTools, htmltools, knitr, yaml
+
+Package: rpivotTable
+Source: CRAN
+Version: 0.1.5.7
+Hash: d36b5753fffceaa174a32dce21d49976
+Requires: htmlwidgets
 
 Package: stringi
 Source: CRAN
