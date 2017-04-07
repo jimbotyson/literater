@@ -103,7 +103,7 @@ Rstudio is used to write the markdown file containing the R code and to produce 
 
 Finally, the UNIX make utility is used to automate the process of running any scripts that are required to produce the report and to manage the dependencies between files, ensuring that only scripts that need to be run are run each time.
 
-##The files in this demonstration#
+### The files in this demonstration
 
 The main product of this demonstraion is the PDF.  That file is produced from the script *newtesting.Rmd*; that file contains graphs produced by *graphs.R*; *newtesting.PDF* and *graphs.R* depend on a clean data file called *cleandata.csv*; *cleandata.csv* is produced from the raw data which is read from a website and prepped by a script *readandclean.R*.
 
