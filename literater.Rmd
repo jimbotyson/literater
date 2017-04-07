@@ -151,6 +151,6 @@ coeffs<-xtable(summary(modenghist)$coef)
 print(coeffs)
 ```
 
-\includegraphics[width=200pt]{avg.png}
+![](avg.png)
 
 # References
